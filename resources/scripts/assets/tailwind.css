@@ -1,0 +1,83 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* -------------------------------------------------------------------------
+ * VELTOX DARK THEME
+ * -------------------------------------------------------------------------
+ * Global look for every client page. Colours mirror tailwind.config.js:
+ *   background  #0b0714   cards  hsl(257,23%,17%)   accent  #7c4dff
+ *
+ * IMPORTANT: the background lives on <html>, not <body>. The body box only
+ * grows as tall as the content, so painting it leaves a hard black strip
+ * underneath the footer on short pages. <html> always fills the viewport.
+ * ---------------------------------------------------------------------- */
+
+html {
+    min-height: 100%;
+    background-color: #0b0714;
+    background-image: radial-gradient(circle at 12% -10%, rgba(124, 77, 255, 0.18), transparent 45%),
+        radial-gradient(circle at 88% 0%, rgba(124, 77, 255, 0.1), transparent 40%),
+        linear-gradient(180deg, hsl(257, 23%, 17%) 0%, hsl(259, 30%, 12%) 55%, #0b0714 100%);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: hsl(258, 24%, 91%);
+}
+
+/* Body must stay transparent so the gradient above shows through the whole
+   viewport. GlobalStylesheet.ts no longer sets a background either. */
+body {
+    min-height: 100vh;
+    background-color: transparent;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Text selection picks up the brand colour. */
+::selection {
+    background-color: rgba(124, 77, 255, 0.35);
+    color: #ffffff;
+}
+
+/* Slim dark scrollbars instead of the bright default ones. */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: hsl(255, 19%, 23%) transparent;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: hsl(255, 19%, 23%);
+    border-radius: 999px;
+    border: 2px solid transparent;
+    background-clip: content-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #7c4dff;
+    background-clip: content-box;
+}
+
+/* Autofilled inputs stay dark instead of turning Chrome yellow. */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+    -webkit-text-fill-color: hsl(258, 24%, 91%);
+    -webkit-box-shadow: 0 0 0 1000px hsl(257, 23%, 17%) inset;
+    caret-color: hsl(258, 24%, 91%);
+}
+
+/* Keyboard focus ring in the brand colour. */
+:focus-visible {
+    outline: 2px solid rgba(124, 77, 255, 0.7);
+    outline-offset: 2px;
+}

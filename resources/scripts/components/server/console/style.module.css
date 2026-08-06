@@ -1,0 +1,45 @@
+.terminal {
+    @apply flex flex-col w-full;
+
+    & .overflows_container {
+        @apply -ml-4 sm:ml-0;
+        width: calc(100% + 2rem);
+
+        @screen sm {
+            @apply w-full;
+        }
+    }
+
+    & > .container {
+        @apply rounded-t-lg p-1 sm:p-2 bg-black min-h-[16rem] flex-1 font-mono text-sm;
+        @apply border border-b-0 border-gray-700/70;
+
+        & #terminal {
+            @apply h-full;
+
+            &::-webkit-scrollbar-track {
+                @apply w-2;
+            }
+
+            &::-webkit-scrollbar-thumb {
+                @apply bg-gray-900;
+            }
+        }
+    }
+
+    & .command_icon {
+        @apply flex items-center top-0 left-0 absolute z-10 select-none h-full px-3 transition-colors duration-100;
+    }
+
+    & .command_input {
+        @apply relative bg-surface px-2 text-gray-100 pl-10 pr-4 py-2 w-full font-mono text-sm sm:rounded-b-lg;
+        @apply border border-gray-700/70;
+        @apply focus:ring-0 outline-none focus-visible:outline-none;
+        @apply border-b-2 border-b-transparent transition-colors duration-100;
+        @apply active:border-b-primary-500 focus:border-b-primary-500;
+    }
+}
+
+.chart_container {
+    @apply bg-surface rounded-lg border border-gray-700/70 pt-3 pb-1 relative overflow-hidden;
+}

@@ -1,0 +1,27 @@
+[ns]  App\ -> Pterodactyl\  : app/Http/Controllers/Admin/NotificationController.php
+[ns]  App\ -> Pterodactyl\  : app/Http/Controllers/Admin/PermissionController.php
+[ns]  App\ -> Pterodactyl\  : app/Http/Middleware/CheckCustomPermission.php
+[ns]  App\ -> Pterodactyl\  : app/Models/AdminPermission.php
+[ns]  App\ -> Pterodactyl\  : app/Models/Notification.php
+[ns]  App\ -> Pterodactyl\  : app/Models/UserPermission.php
+[ns]  App\ -> Pterodactyl\  : app/Policies/AdminPermissionPolicy.php
+[ns]  App\ -> Pterodactyl\  : app/Policies/UserPermissionPolicy.php
+[db]  Notification model -> table veltox_notifications (clash with Laravel table fixed)
+[git] .gitignore rewritten (build output is now published, secrets/junk are not)
+[git] public/.gitignore rewritten (public/assets is no longer excluded)
+[db]  new migration: 2026_08_06_000000_create_veltox_notifications_table.php
+[db]  new migration: 2026_08_06_000100_create_admin_permissions_table.php
+[db]  new migration: 2026_08_06_000200_create_user_permissions_table.php
+[app] middleware alias 'check.custom.permission' registered in Kernel.php
+[ui]  custom-theme.css linked in resources/views/layouts/admin.blade.php
+[fs]  storage/ and bootstrap/cache skeleton restored with .gitkeep files
+[clean] removed .env
+[clean] removed panel.tar.gz
+[clean] removed .build-cache.json
+[clean] removed backup dir storage/blueprint-finish-20260726-105941
+[clean] removed backup dir storage/blueprint-removal-20260726-105444
+[clean] removed backup dir storage/theme-fix-20260726-102322
+[clean] removed backup dir storage/theme-fix-20260726-101258
+[clean] removed backup dir storage/theme-fix-20260726-101707
+[clean] removed backup dir storage/version-manager-uninstall-20260726-100224
+[clean] old laravel logs removed

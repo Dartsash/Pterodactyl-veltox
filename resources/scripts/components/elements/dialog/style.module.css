@@ -1,0 +1,36 @@
+.container {
+    @apply flex min-h-full items-center justify-center p-4 text-center;
+}
+
+.panel {
+    @apply relative bg-surface rounded-lg max-w-xl w-full mx-auto shadow-2xl text-left;
+    @apply border border-gray-700 ring-1 ring-black/40;
+}
+
+.title {
+    @apply font-header text-xl font-medium mb-2 text-gray-50 pr-4;
+}
+
+.close_icon {
+    @apply w-5 h-5 group-hover:rotate-90 transition-transform duration-100;
+}
+
+.dialog_icon {
+    @apply flex items-center justify-center w-10 h-10 rounded-lg mr-4 flex-none;
+
+    &.danger {
+        @apply bg-danger-500/15 text-danger-400;
+    }
+
+    &.warning {
+        @apply bg-warning-500/15 text-warning-400;
+    }
+
+    &.success {
+        @apply bg-success-500/15 text-success-400;
+    }
+
+    &.info {
+        @apply bg-primary-500/15 text-primary-400;
+    }
+}

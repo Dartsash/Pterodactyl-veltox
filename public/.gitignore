@@ -1,0 +1,4 @@
+# The compiled theme must be published so a fresh panel gets it.
+# Only local dev leftovers are ignored here.
+hot
+build

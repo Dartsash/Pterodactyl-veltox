@@ -1,0 +1,75 @@
+.button {
+    @apply px-4 py-2 inline-flex items-center justify-center;
+    @apply rounded text-base font-semibold transition-all duration-100;
+    @apply focus:ring-[3px] focus:ring-offset-2 focus:ring-offset-canvas focus:ring-opacity-50;
+
+    /* Sizing Controls */
+    &.small {
+        @apply px-4 py-0 h-8 font-normal text-sm focus:ring-2;
+    }
+
+    &.large {
+        @apply px-5 py-3;
+    }
+
+    &.secondary {
+        @apply text-gray-50 bg-transparent;
+
+        &:disabled {
+            background: transparent !important;
+        }
+    }
+
+    &:disabled {
+        @apply cursor-not-allowed;
+    }
+
+    &.square {
+        @apply p-0 w-12 h-12;
+
+        &.small {
+            @apply w-8 h-8;
+        }
+    }
+}
+
+/* Primary action. Was blue-600, which clashed with the violet accent. */
+.primary {
+    @apply bg-primary-600 text-white;
+    @apply hover:bg-primary-500 active:bg-primary-500 focus:ring-primary-400 focus:ring-opacity-75;
+
+    &.secondary {
+        @apply hover:bg-primary-600 active:bg-primary-600;
+    }
+
+    &:disabled {
+        @apply bg-primary-600/40 text-white/50;
+    }
+}
+
+/* Neutral action. Was bg-gray-500, which read lighter than the cards it sat on. */
+.text {
+    @apply bg-raised text-gray-100 border border-gray-700;
+    @apply hover:bg-gray-700 active:bg-gray-700 focus:ring-gray-500 focus:ring-opacity-50;
+
+    &.secondary {
+        @apply hover:bg-raised active:bg-raised;
+    }
+
+    &:disabled {
+        @apply bg-raised/60 text-gray-300/50;
+    }
+}
+
+.danger {
+    @apply bg-danger-600 text-white;
+    @apply hover:bg-danger-500 active:bg-danger-500 focus:ring-danger-400 focus:ring-opacity-75;
+
+    &.secondary {
+        @apply hover:bg-danger-600 active:bg-danger-600;
+    }
+
+    &:disabled {
+        @apply bg-danger-600/40 text-white/50;
+    }
+}

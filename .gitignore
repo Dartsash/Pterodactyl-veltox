@@ -1,0 +1,53 @@
+/vendor
+node_modules
+.yarn
+
+# Local environment - NEVER commit real credentials
+.env
+.env.backup
+!.env.example
+!.env.ci
+
+*.DS_Store*
+.vagrant/*
+.vscode/*
+/.idea
+/nbproject
+/.direnv
+_ide_helper.php
+_ide_helper_models.php
+.phpstorm.meta.php
+.php-cs-fixer.cache
+.phpunit.result.cache
+coverage.xml
+
+# Runtime data
+*.log
+storage/logs/*
+!storage/logs/.gitkeep
+storage/framework/cache/*
+!storage/framework/cache/data/.gitkeep
+storage/framework/sessions/*
+!storage/framework/sessions/.gitkeep
+storage/framework/views/*
+!storage/framework/views/.gitkeep
+storage/clockwork/*
+bootstrap/cache/*.php
+
+# Working backups created by our own scripts - do not publish them
+storage/blueprint-*
+storage/theme-fix-*
+storage/version-manager-*
+*.tar.gz
+*.zip
+.build-cache.json
+
+# Docker helpers
+.dockerignore
+docker-compose.*
+!docker-compose.example.yml
+
+# IMPORTANT: the compiled frontend (public/assets) IS committed on purpose,
+# otherwise the Veltox theme will not appear on a fresh panel.
+resources/lang/locales.js
+/public/hot
